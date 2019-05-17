@@ -1,6 +1,6 @@
 {
-    "title": "GitBook学习笔记",
-    "author": "yangjh",
+    "title": "牟梦云的Linux学习笔记",
+    "author": "牟梦云",
 
     "links" : {
         "sidebar" : {
@@ -8,9 +8,31 @@
         }
     },
 
-    "plugins": [ "multipart", "toggle-chapters" ],
+    "plugins": [ "toggle-chapters", "github", "github-buttons", "terminal", "-lunr", "-search", "search-plus" ],
 
-    "theme-default": {
-        "showLevel": true
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+
+        "github": {
+            "url": "https://github.com/mumengyun"
+        },
+
+        "github-buttons": {
+            "repo": "mumengyun/linux",
+            "types": [
+                "star",
+                "watch",
+                "fork"
+            ],
+            "size": "small"
+        },
+
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "flat"
+        }
     }
 }
