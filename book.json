@@ -8,7 +8,7 @@
         }
     },
 
-    "plugins": [ "toggle-chapters", "github", "github-buttons", "terminal", "-lunr", "-search", "search-plus" ],
+    "plugins": [ "toggle-chapters", "github", "github-buttons" ],
 
     "pluginsConfig": {
         "theme-default": {
@@ -20,7 +20,7 @@
         },
 
         "github-buttons": {
-            "repo": "mumengyun/linux",
+            "repo": "https://github.com/mumengyun/linux",
             "types": [
                 "star",
                 "watch",
@@ -34,5 +34,6 @@
             "fade": false,
             "style": "flat"
         }
+
     }
 }

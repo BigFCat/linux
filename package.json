@@ -1,0 +1,27 @@
+{
+  "name": "linux",
+  "version": "1.0.0",
+  "description": "笔记说明:",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-toggle-chapters": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mumengyun/linux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mumengyun/linux/issues"
+  },
+  "homepage": "https://github.com/mumengyun/linux#readme"
+}
