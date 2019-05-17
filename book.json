@@ -8,6 +8,8 @@
         }
     },
 
+    "plugins": [ "multipart", "toggle-chapters" ],
+
     "theme-default": {
         "showLevel": true
     }
