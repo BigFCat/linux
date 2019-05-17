@@ -1,0 +1,14 @@
+{
+    "title": "GitBook学习笔记",
+    "author": "yangjh",
+
+    "links" : {
+        "sidebar" : {
+            "Home" : "https://www.24linux.com"
+        }
+    },
+
+    "theme-default": {
+        "showLevel": true
+    }
+}
