@@ -1,5 +1,0 @@
-# git
-
-```shell
-git clone
-```
