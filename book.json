@@ -8,7 +8,7 @@
         }
     },
 
-    "plugins": [ "toggle-chapters", "github", "github-buttons" ],
+    "plugins": [ "toggle-chapters", "github", "github-buttons", "edit-link" ],
 
     "pluginsConfig": {
         "theme-default": {
@@ -20,20 +20,29 @@
         },
 
         "github-buttons": {
-            "repo": "https://github.com/mumengyun/linux",
-            "types": [
-                "star",
-                "watch",
-                "fork"
-            ],
-            "size": "small"
-        },
+            "buttons": [{
+              "user": "mumengyun",
+              "repo": "linux",
+              "type": "star",
+              "size": "small"
+            }, {
+              "user": "mumengyun",
+              "type": "follow",
+              "width": "120",
+              "count": false,
+              "size": "small"
+            }]
+          },
 
         "terminal": {
             "copyButtons": true,
             "fade": false,
             "style": "flat"
-        }
+        },
 
+        "edit-link": {
+            "base": "https://github.com/mumengyun/linux/tree/master",
+            "label": "编辑本页"
+          }
     }
 }
