@@ -1,5 +1,9 @@
 # Git教程
 
+在使用 git 之前，建议使用别名设置 `git log`，这样看日志会更舒服。设置完成后输入`git lg`即可显示操作记录。命令如下：
+
+`git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"`
+
 ## 版本管理
 
 1. 创建版本库
@@ -70,5 +74,13 @@ git clone <远程库地址>
 
 ## 标签管理
 
+1. `git tag <tagname>`: 用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+2. `git tag -a <tagname> -m "blablabla..."`: 可以指定标签信息；
+3. `git tag`: 可以查看所有标签。
+4. `git push origin <tagname>`可以推送一个本地标签；
+5. `git push origin --tags`: 可以推送全部未推送过的本地标签；
+6. `git tag -d <tagname>`: 可以删除一个本地标签；
+7. `git push origin :refs/tags/<tagname>`: 可以删除一个远程标签。
 
+## 疑难杂症
 
