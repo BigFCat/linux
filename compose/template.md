@@ -68,7 +68,7 @@ build 中可以指定镜像，但是是基于Dockerfile的，build.image也是�
 
 ## config
 
-参照[docker-swarm集群管理配置信息configs]()
+参照[Swarm集群管理配置信息configs](/swarm/config.md)
 
 ### Short syntax
 
@@ -143,7 +143,7 @@ services:
 
 ## deploy 
 
-Deploy是用来指定swarm服务部署和运行时的相关配置，并且只有使用docker stack deploy 部署swarm集群时才会生效。如果使用docker-compose up 或者docker-compose run时，该选项会被忽略。要使用deploy选项，compose-file中version版本要在3或3+
+deploy是用来指定swarm服务部署和运行时的相关配置，并且只有使用docker stack deploy 部署swarm集群时才会生效。如果使用docker-compose up 或者docker-compose run时，该选项会被忽略。要使用deploy选项，compose-file中version版本要在3或3+
 
 ### endpoint_mode 服务发现模式
 
