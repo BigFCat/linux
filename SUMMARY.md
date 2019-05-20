@@ -6,8 +6,6 @@
 * [Git教程](git/git.md)
 
 * [Gitbook教程](gitbook/gitbook.md)
-    * [Gitbook配置](gitbook/conf.md)
-    * [Gitbook & Github](gitbook/github.md)
 
 ## 网络相关
 * [TCP](network/network.md)
