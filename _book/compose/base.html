@@ -1,0 +1,701 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安装及基本使用 · 牟梦云的Linux学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="牟梦云">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="command.html" />
+    
+    
+    <link rel="prev" href="compose.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"mumengyun","repo":"linux","type":"star","size":"small"},{"user":"mumengyun","type":"follow","width":"150","count":false,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.24linux.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    编写说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">常用工具</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../git/git.html">
+            
+                <a href="../git/git.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Git教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../gitbook/gitbook.html">
+            
+                <a href="../gitbook/gitbook.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Gitbook教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">容器技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../docker/docker.html">
+            
+                <a href="../docker/docker.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../docker/install.html">
+            
+                <a href="../docker/install.html">
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    容器优势及安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../docker/base.html">
+            
+                <a href="../docker/base.html">
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    镜像-容器-仓库基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../docker/image-command.html">
+            
+                <a href="../docker/image-command.html">
+            
+                    
+                        <b>3.1.3.</b>
+                    
+                    镜像image常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../docker/container-command.html">
+            
+                <a href="../docker/container-command.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    容器container常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../docker/dockerfile.html">
+            
+                <a href="../docker/dockerfile.html">
+            
+                    
+                        <b>3.1.5.</b>
+                    
+                    dockerfile编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../docker/registry.html">
+            
+                <a href="../docker/registry.html">
+            
+                    
+                        <b>3.1.6.</b>
+                    
+                    私有仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../docker/docker-add.html">
+            
+                <a href="../docker/docker-add.html">
+            
+                    
+                        <b>3.1.7.</b>
+                    
+                    版本更新说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="compose.html">
+            
+                <a href="compose.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Compose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.2.1" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    安装及基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="template.html">
+            
+                <a href="template.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    模板文件编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../swarm/swarm.html">
+            
+                <a href="../swarm/swarm.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Swarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../k8s/k8s.html">
+            
+                <a href="../k8s/k8s.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../practices/practices.html">
+            
+                <a href="../practices/practices.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >安装及基本使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B89;&#x88C5;&#x53CA;&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x5B89;&#x88C5;&#x53CA;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h1>
+<h2 id="compose&#x7B80;&#x4ECB;">compose&#x7B80;&#x4ECB;</h2>
+<p><strong>Compose</strong> &#x9879;&#x76EE;&#x662F;docker&#x5B98;&#x65B9;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x7531;python&#x7F16;&#x5199;&#x3002;&#x8D1F;&#x8D23;&#x5B9E;&#x73B0;&#x5BF9;docker&#x5BB9;&#x5668;&#x96C6;&#x7FA4;&#x7684;&#x5FEB;&#x901F;&#x7F16;&#x6392;&#x3002;<a href="https://github.com/docker/compose" target="_blank">docker-compose&#x9879;&#x76EE;&#x5B98;&#x65B9;&#x5F00;&#x6E90;&#x5730;&#x5740;</a></p>
+<p><code>Dockerfile</code> &#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x800C; <code>compose</code> &#x5219;&#x53EF;&#x4EE5;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x7EC4;&#x5173;&#x8054;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x4E3A;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x4E2A;web&#x5E94;&#x7528;&#xFF0C;&#x4F7F;&#x7528;nginx&#x4F5C;&#x4E3A;web&#x670D;&#x52A1;&#x7AEF;&#xFF0C;php&#x89E3;&#x6790;&#x52A8;&#x6001;&#x6587;&#x4EF6;&#xFF0C;mysql&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3002;&#x4E09;&#x4E2A;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;<code>docker-compose.yaml</code>&#x6587;&#x4EF6;&#x4E2D;&#x7BA1;&#x7406;&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;&#x548C;&#x5378;&#x8F7D;">&#x5B89;&#x88C5;&#x548C;&#x5378;&#x8F7D;</h2>
+<p>Linux &#x7CFB;&#x7EDF;&#xFF1A;</p>
+<p>&#x4E0B;&#x8F7D;Docker Comepose&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose`
+</code></pre>
+<p>&#x6DFB;&#x52A0;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;</p>
+<pre><code class="lang-shell">chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x5B89;&#x88C5;&#xFF0C;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x6C38;&#x8FDC;&#x662F;&#x6700;&#x597D;&#x7684;&#x8001;&#x5E08;  <a href="https://docs.docker.com/compose/install/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;&#x5730;&#x5740;</a></p>
+<h2 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2>
+<h3 id="&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#xFF0C;&#x5B9A;&#x4E49;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;">&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#xFF0C;&#x5B9A;&#x4E49;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h3>
+<pre><code class="lang-shell"># mkdir pyweb
+# cd pyweb/
+# vim app.py
+</code></pre>
+<h3 id="apppy-&#x4EE3;&#x7801;">app.py &#x4EE3;&#x7801;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+
+<span class="hljs-keyword">import</span> redis
+<span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
+
+
+app = Flask(__name__)
+cache = redis.Redis(host=<span class="hljs-string">&apos;redis&apos;</span>, port=<span class="hljs-number">6379</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_hit_count</span><span class="hljs-params">()</span>:</span>
+    retries = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">return</span> cache.incr(<span class="hljs-string">&apos;hits&apos;</span>)
+        <span class="hljs-keyword">except</span> redis.exceptions.ConnectionError <span class="hljs-keyword">as</span> exc:
+            <span class="hljs-keyword">if</span> retries == <span class="hljs-number">0</span>:
+                <span class="hljs-keyword">raise</span> exc
+            retries -= <span class="hljs-number">1</span>
+            time.sleep(<span class="hljs-number">0.5</span>)
+
+
+<span class="hljs-meta">@app.route(&apos;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span>:</span>
+    count = get_hit_count()
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Hello World! I have been seen {} times.\n&apos;</span>.format(count)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    app.run(host=<span class="hljs-string">&quot;0.0.0.0&quot;</span>, debug=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;requirementstxt">&#x521B;&#x5EFA;requirements.txt</h2>
+<pre><code>flask
+reids
+</code></pre><h2 id="&#x521B;&#x5EFA;-dockerfile">&#x521B;&#x5EFA; dockerfile</h2>
+<pre><code class="lang-yaml">FROM python:<span class="hljs-number">3.5</span>-alpine
+ADD . /code
+WORKDIR /code
+RUN pip install -r requirements.txt
+CMD [<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;app.py&quot;</span>]
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5B98;&#x65B9;&#x4F7F;&#x7528;&#x5F97;&#x662F; python:3.4-alpine &#x4F5C;&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;pip install&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x6539;&#x4E3A;3.5&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;-docker-composefile">&#x521B;&#x5EFA; docker-compose.file</h2>
+<pre><code class="lang-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&apos;3&apos;</span>
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  web:</span>
+<span class="hljs-attr">    build:</span> .
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">     -</span> <span class="hljs-string">&quot;5000:5000&quot;</span>
+<span class="hljs-attr">  redis:</span>
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;redis:alpine&quot;</span>
+</code></pre>
+<h3 id="&#x542F;&#x52A8;&#x670D;&#x52A1;-docker-compose-up">&#x542F;&#x52A8;&#x670D;&#x52A1; <code>docker-compose up</code></h3>
+<p>&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code># docker-compose up
+Building web
+Step 1/5 : FROM python:3.5-alpine
+3.5-alpine: Pulling from library/python
+bdf0201b3a05: Pull complete
+59c926705abf: Pull complete
+a309f6bd7e2d: Pull complete
+42d4929c1c07: Pull complete
+fb82abe311e8: Pull complete
+Digest: sha256:d17e05482015d2266b8135f74eef7d154b183a2a5dff511d42d253d9178056e6
+Status: Downloaded newer image for python:3.5-alpine
+ ---&gt; 20aab83bbf15
+Step 2/5 : ADD . /code
+ ---&gt; 57b0badbd270
+Step 3/5 : WORKDIR /code
+Removing intermediate container f268fbaf9c20
+ ---&gt; 908da9c70624
+Step 4/5 : RUN pip install -r requirements.txt
+ ---&gt; Running in 1112957973f8
+Collecting flask (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting redis (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/ac/a7/cff10cc5f1180834a3ed564d148fb4329c989cbb1f2e196fc9a10fa07072/redis-3.2.1-py2.py3-none-any.whl (65kB)
+Collecting click&gt;=5.1 (from flask-&gt;-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Werkzeug&gt;=0.14 (from flask-&gt;-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328kB)
+Collecting itsdangerous&gt;=0.24 (from flask-&gt;-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2&gt;=2.10 (from flask-&gt;-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124kB)
+Collecting MarkupSafe&gt;=0.23 (from Jinja2&gt;=2.10-&gt;flask-&gt;-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz
+Building wheels for collected packages: MarkupSafe
+  Building wheel for MarkupSafe (setup.py): started
+  Building wheel for MarkupSafe (setup.py): finished with status &apos;done&apos;
+  Stored in directory: /root/.cache/pip/wheels/f2/aa/04/0edf07a1b8a5f5f1aed7580fffb69ce8972edc16a505916a77
+Successfully built MarkupSafe
+Installing collected packages: click, Werkzeug, itsdangerous, MarkupSafe, Jinja2, flask, redis
+Successfully installed Jinja2-2.10.1 MarkupSafe-1.1.1 Werkzeug-0.15.2 click-7.0 flask-1.0.2 itsdangerous-1.1.0 redis-3.2.1
+Removing intermediate container 1112957973f8
+ ---&gt; 3093fe39465f
+Step 5/5 : CMD [&quot;python&quot;, &quot;app.py&quot;]
+ ---&gt; Running in 35972a01e7df
+Removing intermediate container 35972a01e7df
+ ---&gt; bb9dfca400d5
+Successfully built bb9dfca400d5
+Successfully tagged pyweb_web:latest
+WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Pulling redis (redis:alpine)...
+alpine: Pulling from library/redis
+bdf0201b3a05: Already exists
+542e0c4f2f18: Pull complete
+cbf113c39f65: Pull complete
+09158274ea6c: Pull complete
+ffc2a2e9a3a6: Pull complete
+bcdc222d2d8e: Pull complete
+Digest: sha256:ef67270b8bcb6b801a67d186ed16051520867b985e4f2f1233b510938dc55b22
+Status: Downloaded newer image for redis:alpine
+Creating pyweb_redis_1 ... done
+Creating pyweb_web_1   ... done
+Attaching to pyweb_redis_1, pyweb_web_1
+redis_1  | 1:C 22 Apr 2019 08:43:29.101 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1  | 1:C 22 Apr 2019 08:43:29.101 # Redis version=5.0.4, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1  | 1:C 22 Apr 2019 08:43:29.101 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 * Running mode=standalone, port=6379.
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 # Server initialized
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &apos;vm.overcommit_memory = 1&apos; to /etc/sysctl.conf and then reboot or run the command &apos;sysctl vm.overcommit_memory=1&apos; for this to take effect.
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &apos;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&apos; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+redis_1  | 1:M 22 Apr 2019 08:43:29.103 * Ready to accept connections
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="compose.html" class="navigation navigation-prev " aria-label="Previous page: Compose">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="command.html" class="navigation navigation-next " aria-label="Next page: 常用操作命令">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"安装及基本使用","level":"3.2.1","depth":2,"next":{"title":"常用操作命令","level":"3.2.2","depth":2,"path":"compose/command.md","ref":"compose/command.md","articles":[]},"previous":{"title":"Compose","level":"3.2","depth":1,"path":"compose/compose.md","ref":"compose/compose.md","articles":[{"title":"安装及基本使用","level":"3.2.1","depth":2,"path":"compose/base.md","ref":"compose/base.md","articles":[]},{"title":"常用操作命令","level":"3.2.2","depth":2,"path":"compose/command.md","ref":"compose/command.md","articles":[]},{"title":"模板文件编写","level":"3.2.3","depth":2,"path":"compose/template.md","ref":"compose/template.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","github","github-buttons","edit-link","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mumengyun"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"mumengyun","repo":"linux","type":"star","size":"small"},{"user":"mumengyun","type":"follow","width":"150","count":false,"size":"small"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"label":"编辑本页","base":"https://github.com/mumengyun/linux/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"toggle-chapters":{}},"theme":"default","author":"牟梦云","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"牟梦云的Linux学习笔记","links":{"sidebar":{"Home":"https://www.24linux.com"}},"gitbook":"*"},"file":{"path":"compose/base.md","mtime":"2019-05-20T09:22:02.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-20T09:22:08.304Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

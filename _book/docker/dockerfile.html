@@ -1,0 +1,1066 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>dockerfile编写 · 牟梦云的Linux学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="牟梦云">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="registry.html" />
+    
+    
+    <link rel="prev" href="container-command.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"mumengyun","repo":"linux","type":"star","size":"small"},{"user":"mumengyun","type":"follow","width":"150","count":false,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.24linux.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    编写说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">常用工具</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../git/git.html">
+            
+                <a href="../git/git.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Git教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../gitbook/gitbook.html">
+            
+                <a href="../gitbook/gitbook.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Gitbook教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">容器技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="docker.html">
+            
+                <a href="docker.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    容器优势及安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    镜像-容器-仓库基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="image-command.html">
+            
+                <a href="image-command.html">
+            
+                    
+                        <b>3.1.3.</b>
+                    
+                    镜像image常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="container-command.html">
+            
+                <a href="container-command.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    容器container常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.5" data-path="dockerfile.html">
+            
+                <a href="dockerfile.html">
+            
+                    
+                        <b>3.1.5.</b>
+                    
+                    dockerfile编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="registry.html">
+            
+                <a href="registry.html">
+            
+                    
+                        <b>3.1.6.</b>
+                    
+                    私有仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="docker-add.html">
+            
+                <a href="docker-add.html">
+            
+                    
+                        <b>3.1.7.</b>
+                    
+                    版本更新说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../compose/compose.html">
+            
+                <a href="../compose/compose.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Compose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../compose/base.html">
+            
+                <a href="../compose/base.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    安装及基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../compose/command.html">
+            
+                <a href="../compose/command.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    常用操作命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../compose/template.html">
+            
+                <a href="../compose/template.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    模板文件编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../swarm/swarm.html">
+            
+                <a href="../swarm/swarm.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Swarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../k8s/k8s.html">
+            
+                <a href="../k8s/k8s.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../practices/practices.html">
+            
+                <a href="../practices/practices.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >dockerfile编写</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dockerfile-&#x7F16;&#x5199;">dockerfile &#x7F16;&#x5199;</h1>
+<p><a href="https://docs.docker.com/engine/reference/builder/" target="_blank">&#x5B98;&#x65B9;dockerfile&#x7F16;&#x5199;&#x53C2;&#x8003;</a></p>
+<p>&#x5728;&#x6700;&#x5F00;&#x59CB;&#x5B66;&#x4E60;docker&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6CA1;&#x533A;&#x5206;docker&#x548C;kvm&#x7684;&#x533A;&#x522B;&#xFF0C;&#x5F80;&#x5F80;&#x662F;&#x5BB9;&#x5668;&#x8DD1;&#x8D77;&#x6765;&#x540E;exec&#x5BB9;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;yum&#x6216;&#x8005;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x642D;&#x5EFA;&#x73AF;&#x5883;&#xFF0C;&#x73B0;&#x5728;&#x60F3;&#x60F3;&#x7279;&#x522B;&#x50BB;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x95EE;&#x9898;&#x603B;&#x4F1A;&#x9047;&#x5230;&#xFF0C;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x4E2D;&#x5E76;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5C31;&#x8981;&#x81EA;&#x5DF1;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x3002;</p>
+<p>&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x5982;&#x679C;&#x91C7;&#x7528;&#x6700;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x7684;&#x50BB;&#x65B9;&#x6CD5;&#x4E0D;&#x4EC5;&#x4E0D;&#x662F;&#x6B63;&#x786E;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x4F1A;&#x9020;&#x6210;&#x4E00;&#x4E2A;&#x95EE;&#x9898;--&#x955C;&#x50CF;&#x4E0D;&#x591F;&#x900F;&#x660E;&#x3002;&#x65F6;&#x95F4;&#x4E45;&#x4E86;&#x3002;&#x4F60;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x6700;&#x521D;&#x8FDB;&#x884C;&#x4E86;&#x600E;&#x6837;&#x7684;&#x6784;&#x5EFA;&#xFF01;</p>
+<p>Dockerfile&#x5C31;&#x662F;&#x89E3;&#x51B3;&#x8FD9;&#x95EE;&#x9898;&#xFF0C;Dockerfile&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6587;&#x6863;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x7E41;&#x7410;&#x7684;&#x642D;&#x5EFA;&#x8F6C;&#x5316;&#x4E3A;&#x4EE3;&#x7801;&#x5F62;&#x5F0F;&#xFF0C;&#x7EF4;&#x62A4;&#x4E5F;&#x4F1A;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#x3002;</p>
+<p>Dockerfile &#x662F;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x5185;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x6761;&#x6761;&#x7684;&#x6307;&#x4EE4;(Instruction)&#xFF0C;&#x6BCF;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x6784;&#x5EFA;&#x4E00;&#x5C42;&#xFF0C;&#x56E0;&#x6B64;&#x6BCF;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5C31;&#x662F;&#x63CF;&#x8FF0;&#x8BE5;&#x5C42;&#x5E94;&#x5F53;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;dockerfile&#x7684;&#x539F;&#x7406;">&#x4F7F;&#x7528;Dockerfile&#x7684;&#x539F;&#x7406;</h2>
+<p>&#x5728;&#x5B89;&#x88C5;&#x597D;docker&#x540E;(&#x5B89;&#x88C5;&#x53C2;&#x8003;&#x94FE;&#x63A5;)&#xFF0C;&#x4F7F;&#x7528;<code>docker version</code>&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x663E;&#x793A;&#x4E86;server&#x548C;client&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;</p>
+<pre><code class="lang-shell"># docker version
+Client:
+ Version:      18.03.1-ce
+ API version:  1.37
+ Go version:   go1.9.5
+ Git commit:   9ee9f40
+ Built:        Thu Apr 26 07:20:16 2018
+ OS/Arch:      linux/amd64
+ Experimental: false
+ Orchestrator: swarm
+
+Server:
+ Engine:
+  Version:      18.03.1-ce
+  API version:  1.37 (minimum version 1.12)
+  Go version:   go1.9.5
+  Git commit:   9ee9f40
+  Built:        Thu Apr 26 07:23:58 2018
+  OS/Arch:      linux/amd64
+  Experimental: false
+</code></pre>
+<p>Docker &#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5206;&#x4E3A; Docker &#x5F15;&#x64CE;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF09;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x3002;Docker &#x7684;&#x5F15;&#x64CE;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4; REST API&#xFF0C;&#x88AB;&#x79F0;&#x4E3A; Docker Remote API&#xFF0C;&#x800C;&#x5982; docker &#x547D;&#x4EE4;&#x8FD9;&#x6837;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#xFF0C;&#x5219;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x7EC4; API &#x4E0E; Docker &#x5F15;&#x64CE;&#x4EA4;&#x4E92;&#xFF0C;&#x4ECE;&#x800C;&#x5B8C;&#x6210;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x867D;&#x7136;&#x8868;&#x9762;&#x4E0A;&#x6211;&#x4EEC;&#x597D;&#x50CF;&#x662F;&#x5728;&#x672C;&#x673A;&#x6267;&#x884C;&#x5404;&#x79CD; docker &#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4E00;&#x5207;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x5F62;&#x5F0F;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF08;Docker &#x5F15;&#x64CE;&#xFF09;&#x5B8C;&#x6210;&#x3002;&#x4E5F;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD; C/S &#x8BBE;&#x8BA1;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x7684; Docker &#x5F15;&#x64CE;&#x53D8;&#x5F97;&#x8F7B;&#x800C;&#x6613;&#x4E3E;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5E76;&#x975E;&#x6240;&#x6709;&#x5B9A;&#x5236;&#x90FD;&#x4F1A;&#x901A;&#x8FC7; RUN &#x6307;&#x4EE4;&#x5B8C;&#x6210;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x9700;&#x8981;&#x5C06;&#x4E00;&#x4E9B;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x8FDB;&#x955C;&#x50CF;&#xFF0C;&#x6BD4;&#x5982;&#x901A;&#x8FC7; COPY &#x6307;&#x4EE4;&#x3001;ADD &#x6307;&#x4EE4;&#x7B49;&#x3002;&#x800C; docker build &#x547D;&#x4EE4;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#xFF0C;&#x5176;&#x5B9E;&#x5E76;&#x975E;&#x5728;&#x672C;&#x5730;&#x6784;&#x5EFA;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; Docker &#x5F15;&#x64CE;&#x4E2D;&#x6784;&#x5EFA;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x79CD;&#x5BA2;&#x6237;&#x7AEF;/&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x8BA9;&#x670D;&#x52A1;&#x7AEF;&#x83B7;&#x5F97;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x5C31;&#x5F15;&#x5165;&#x4E86;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x5F53;&#x6784;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528;&#x6237;&#x4F1A;&#x6307;&#x5B9A;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;docker build &#x547D;&#x4EE4;&#x5F97;&#x77E5;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x540E;&#xFF0C;&#x4F1A;&#x5C06;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x6253;&#x5305;&#xFF0C;&#x7136;&#x540E;&#x4E0A;&#x4F20;&#x7ED9; Docker &#x5F15;&#x64CE;&#x3002;&#x8FD9;&#x6837; Docker &#x5F15;&#x64CE;&#x6536;&#x5230;&#x8FD9;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5305;&#x540E;&#xFF0C;&#x5C55;&#x5F00;&#x5C31;&#x4F1A;&#x83B7;&#x5F97;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x6240;&#x9700;&#x7684;&#x4E00;&#x5207;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="&#x4EE5;nginx&#x5B98;&#x65B9;dockerfile&#x6784;&#x5EFA;&#x955C;&#x50CF;">&#x4EE5;nginx&#x5B98;&#x65B9;Dockerfile&#x6784;&#x5EFA;&#x955C;&#x50CF;</h2>
+<p>&#x6211;&#x4F7F;&#x7528;&#x7684;&#x662F; &#x5B98;&#x65B9;nginx:1.15.12&#x7684;Dockerfile <a href="https://raw.githubusercontent.com/nginxinc/docker-nginx/e5123eea0d29c8d13df17d782f15679458ff899e/mainline/alpine/Dockerfile" target="_blank">https://raw.githubusercontent.com/nginxinc/docker-nginx/e5123eea0d29c8d13df17d782f15679458ff899e/mainline/alpine/Dockerfile</a></p>
+<p>&#x4F7F;&#x7528; <code>docker build</code>&#x6784;&#x5EFA;&#x955C;&#x50CF;</p>
+<p>docker build -t &#x955C;&#x50CF;&#x540D;&#x79F0; .     &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x672C;&#x5730;&#x6587;&#x4EF6;</p>
+<p>docker build -t &#x955C;&#x50CF;&#x540D;&#x79F0; -f dockerfile .    &#x53EF;&#x4EE5;&#x6307;&#x5B9A;dockerfile&#x5728;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</p>
+<p>docker build dockerfile-http   &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x7F51;&#x7EDC;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell"># docker build https://raw.githubusercontent.com/nginxinc/docker-nginx/e5123eea0d29c8d13df17d782f15679458ff899e/mainline/alpine/Dockerfile
+Sending build context to Docker daemon  7.168kBs://raw.githubusercontent.com/nginxinc/docker-nginx/e5123eea0d29c8d13df17d782f15679458ff899e/mainline/alpine/Dockerfile  5.402kB
+Step 1/9 : FROM alpine:3.9
+ ---&gt; cdf98d1859c1
+Step 2/9 : LABEL maintainer=&quot;NGINX Docker Maintainers &lt;docker-maint@nginx.com&gt;&quot;
+ ---&gt; Running in 5963725fb3bf
+Removing intermediate container 5963725fb3bf
+ ---&gt; c99cf680834c
+Step 3/9 : ENV NGINX_VERSION 1.15.12
+ ---&gt; Running in e1e9c712280d
+...
+...
+Executing busybox-1.29.3-r10.trigger
+OK: 15 MiB in 29 packages
+Removing intermediate container ae5177199681
+ ---&gt; 86088840b395
+Step 5/9 : COPY nginx.conf /etc/nginx/nginx.conf
+COPY failed: stat /var/lib/docker/tmp/docker-builder548521117/nginx.conf: no such file or directory
+</code></pre>
+<pre><code class="lang-shell"># docker build -t nginx -f ./Dockerfile.nginx  .
+Sending build context to Docker daemon  8.192kB
+Step 1/9 : FROM alpine:3.9
+ ---&gt; cdf98d1859c1
+Step 2/9 : LABEL maintainer=&quot;NGINX Docker Maintainers &lt;docker-maint@nginx.com&gt;&quot;
+ ---&gt; Running in 04ffef3125b9
+Removing intermediate container 04ffef3125b9
+ ---&gt; ce7374c0d7a3
+Step 3/9 : ENV NGINX_VERSION 1.15.12
+</code></pre>
+<h2 id="&#x4E0A;&#x4E0B;&#x6587;-context">&#x4E0A;&#x4E0B;&#x6587; context</h2>
+<p>&#x4EE5;&#x4E0A;&#x662F;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;build&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x91C7;&#x7528;&#x4E91;&#x4E0A;&#x7684;dockerfile&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x91C7;&#x7528;&#x672C;&#x5730;&#x7684;&#x6587;&#x4EF6;</p>
+<p>&#x6CE8;&#x610F;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x547D;&#x4EE4;&#x884C;&#x6700;&#x540E;&#x7684; &#x201C;.&#x201D;  &#x8FD9;&#x4E2A;&#x662F;&#x6307;&#x5B9A;<code>&#x4E0A;&#x4E0B;&#x6587;&#x8DEF;&#x5F84;</code> &#xFF0C;&#x4E0D;&#x662F;&#x6307;&#x5B9A;dockerfile&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6307;&#x5B9A;dockerfile&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;<code>-f</code>&#x53C2;&#x6570;&#xFF0C;&#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x4E5F;&#x6709;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x660E;</p>
+<pre><code># docker build -h
+
+Usage:    docker build [OPTIONS] PATH | URL | -
+
+Options:
+
+  -f, --file string             Name of the Dockerfile (Default is &apos;PATH/Dockerfile&apos;)
+</code></pre><p>&#x4E0A;&#x4E0B;&#x6587;context&#x7684;&#x4F5C;&#x7528;&#x6211;&#x7406;&#x89E3;&#x4E3A;&#x544A;&#x8BC9;docker server&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x662F;&#x54EA;&#x4E2A;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;dockerfile&#x79CD;&#x9700;&#x8981;ADD&#xFF0C;COPY&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5728;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x79CD;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x5F88;&#x81EA;&#x7136;&#x7684;&#x5C06; <code>.</code> &#x9519;&#x8BEF;&#x7406;&#x89E3;&#x4E3A;&#x6307;&#x5B9A;dockerfile&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E0D;&#x6307;&#x5B9A;dockerfile&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>docker build .</code> &#x9ED8;&#x8BA4;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;&#x76EE;&#x5F55;&#x4E0B;&#x9ED8;&#x8BA4;&#x7684;<code>Dockerfile</code>&#x6587;&#x4EF6;</p>
+<p>&#x4E0B;&#x9762;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x6765;&#x7406;&#x89E3;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x7528;&#x5904;&#xFF1A;</p>
+<p>&#x6211;&#x5728;Dockerfile&#x4E2D; COPY&#x6587;&#x4EF6;&#x5230;&#x955C;&#x50CF;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5728;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x4E3A;<code>/root/docker/nginx/nginx.conf</code></p>
+<pre><code class="lang-shell">[root@VM_79_16_centos nginx]# pwd
+/root/docker/nginx
+[root@VM_79_16_centos nginx]# cat Dockerfile 
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/conf
+
+[root@VM_79_16_centos nginx]# docker build .
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM nginx:alpine
+ ---&gt; 0be75340bd9b
+Step 2/2 : COPY nginx.conf /etc/nginx/conf
+ ---&gt; Using cache
+ ---&gt; b1276e473d48
+Successfully built b1276e473d48  
+
+### COPY&#x6210;&#x529F;&#xFF0C;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x6210;&#x529F;&#xFF0C;&#x6587;&#x4EF6;&#x5730;&#x5740;&#x4E3A;&#x4EE5;&#x4E0A;&#x4E0B;&#x6587;&#x76EE;&#x5F55;&#x4E3A;&#x6839;&#x8DEF;&#x5F84;
+
+[root@VM_79_16_centos nginx]# vim Dockerfile 
+[root@VM_79_16_centos nginx]# cat Dockerfile 
+FROM nginx:alpine
+COPY /root/docker/nginx/nginx.conf /etc/nginx/conf
+### &#x4FEE;&#x6539;&#x4E3A;&#x4EE5;&#x7CFB;&#x7EDF;&#x6839;&#x8DEF;&#x5F84;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+[root@VM_79_16_centos nginx]# docker build .
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM nginx:alpine
+ ---&gt; 0be75340bd9b
+Step 2/2 : COPY /root/docker/nginx/nginx.conf /etc/nginx/conf
+COPY failed: stat /var/lib/docker/tmp/docker-builder587730389/root/docker/nginx/nginx.conf: no such file or directory
+### &#x6784;&#x5EFA;&#x5931;&#x8D25;&#xFF0C;&#x63D0;&#x793A;&#x6587;&#x4EF6;&#x672A;&#x627E;&#x5230; &#xFF01;
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x793A;&#x4F8B;&#x5C31;&#x80FD;&#x8BF4;&#x660E;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<h2 id="dockerignore-&#x6587;&#x4EF6;">.dockerignore &#x6587;&#x4EF6;</h2>
+<p>&#x5728;docker CLI&#x5C06;&#x4E0A;&#x4E0B;&#x6587;&#x53D1;&#x9001;&#x5230;docker&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x4F1A;&#x67E5;&#x627E;.dockerignore&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6B64;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#xFF0C;CLI&#x5C06;&#x4FEE;&#x6539;&#x4E0A;&#x4E0B;&#x6587;&#x4EE5;&#x6392;&#x9664;&#x4E0E;&#x5176;&#x4E2D;&#x7684;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x5C06;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;COPY&#x5230;&#x955C;&#x50CF;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;.dockerignore&#x6392;&#x9664;&#x5176;&#x4E2D;&#x7684;xxx.conf&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell"># cat .dockerignore 
+xxxx/xxx.conf
+</code></pre>
+<pre><code class="lang-shell">[root@VM_79_16_centos nginx]# ll xxxx/
+total 8
+-rw-r--r-- 1 root root 4 Apr 18 11:53 nginx.conf
+-rw-r--r-- 1 root root 4 Apr 18 12:10 xxx.conf
+[root@VM_79_16_centos nginx]# cat Dockerfile 
+FROM nginx:alpine
+COPY xxxx /etc/nginx/conf
+
+[root@VM_79_16_centos nginx]# docker build .
+Sending build context to Docker daemon  4.608kB
+Step 1/2 : FROM nginx:alpine
+alpine: Pulling from library/nginx
+bdf0201b3a05: Pull complete 
+08d74e155349: Pull complete 
+a9e2a0b35060: Pull complete 
+d9e2304ab8d0: Pull complete 
+Digest: sha256:61e3db30b1334b1fa0a2e71b86625188f76653565d515d5f74ecc55a8fb91ce9
+Status: Downloaded newer image for nginx:alpine
+ ---&gt; 0be75340bd9b
+Step 2/2 : COPY xxxx /etc/nginx/conf
+ ---&gt; 829052bdb86a
+Successfully built 829052bdb86a
+### &#x6784;&#x5EFA;&#x955C;&#x50CF;  &#x5C06;xxxx&#x76EE;&#x5F55;COPY&#x5230;&#x955C;&#x50CF;&#x76EE;&#x5F55;&#x4E2D;
+
+[root@VM_79_16_centos nginx]# docker run -d 829
+073790d1e2d340ca792d60e2239dc0f691248be36dfb5dad458568b03dd9aaf6
+[root@VM_79_16_centos nginx]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+073790d1e2d3        829                 &quot;nginx -g &apos;daemon of&#x2026;&quot;   3 seconds ago       Up 2 seconds        80/tcp              pensive_stallman
+[root@VM_79_16_centos nginx]# docker exec -it 073 sh
+/ # ls etc/nginx/conf/
+nginx.conf
+
+### &#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x672A;&#x770B;&#x5230;xxx.conf&#x6587;&#x4EF6;
+</code></pre>
+<h2 id="from--&#x6307;&#x5B9A;&#x57FA;&#x7840;&#x955C;&#x50CF;">FROM  &#x6307;&#x5B9A;&#x57FA;&#x7840;&#x955C;&#x50CF;</h2>
+<p>&#x5728; Docker Hub &#x4E0A;&#x6709;&#x975E;&#x5E38;&#x591A;&#x7684;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x5B98;&#x65B9;&#x955C;&#x50CF;&#xFF0C;&#x6709;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x62FF;&#x6765;&#x4F7F;&#x7528;&#x7684;&#x670D;&#x52A1;&#x7C7B;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5982; nginx&#x3001;redis&#x3001;mongo&#x3001;mysql&#x3001;httpd&#x3001;php&#x3001;tomcat &#x7B49;&#xFF1B;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x3001;&#x6784;&#x5EFA;&#x3001;&#x8FD0;&#x884C;&#x5404;&#x79CD;&#x8BED;&#x8A00;&#x5E94;&#x7528;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5982; node&#x3001;openjdk&#x3001;python&#x3001;ruby&#x3001;golang &#x7B49;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4E2D;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x6700;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x7684;&#x955C;&#x50CF;&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5B98;&#x65B9;&#x955C;&#x50CF;&#x4E2D;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x66F4;&#x4E3A;&#x57FA;&#x7840;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#xFF0C;&#x5982; ubuntu&#x3001;debian&#x3001;centos&#x3001;fedora&#x3001;alpine &#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8F6F;&#x4EF6;&#x5E93;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x5E7F;&#x9614;&#x7684;&#x6269;&#x5C55;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x9009;&#x62E9;&#x73B0;&#x6709;&#x955C;&#x50CF;&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x5916;&#xFF0C;Docker &#x8FD8;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x540D;&#x4E3A; <code>scratch</code> &#x3002;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x662F;&#x865A;&#x62DF;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5E76;&#x4E0D;&#x5B9E;&#x9645;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x7684;&#x955C;&#x50CF;&#x3002;</p>
+<pre><code class="lang-yaml">FROM scratch
+...
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x4EE5; <code>scratch</code> &#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x7684;&#x8BDD;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4F60;&#x4E0D;&#x4EE5;&#x4EFB;&#x4F55;&#x955C;&#x50CF;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6240;&#x5199;&#x7684;&#x6307;&#x4EE4;&#x5C06;&#x4F5C;&#x4E3A;&#x955C;&#x50CF;&#x7B2C;&#x4E00;&#x5C42;&#x5F00;&#x59CB;&#x5B58;&#x5728;&#x3002;</p>
+<p>&#x57FA;&#x7840;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x63A8;&#x8350; <code>alpine</code> 5M&#x4E0D;&#x5230;&#x3002;</p>
+<h2 id="label--&#x6807;&#x7B7E;">LABEL  &#x6807;&#x7B7E;</h2>
+<pre><code class="lang-yaml">LABEL multi.label1=<span class="hljs-string">&quot;value1&quot;</span> \
+      multi.label2=<span class="hljs-string">&quot;value2&quot;</span> \
+      other=<span class="hljs-string">&quot;value3&quot;</span>
+</code></pre>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4EE5;&#x4E0A;&#x5199;&#x6CD5;&#xFF0C;&#x5F88;&#x60C5;&#x7EEA;&#x3002;&#x5F53;&#x7136;&#x6700;&#x597D;&#x53EA;&#x5199;&#x4E00;&#x4E2A;LABEL&#xFF0C;&#x955C;&#x50CF;&#x5C42;&#x6570;&#x6700;&#x5C0F;&#x5316;&#x3002;&#x955C;&#x50CF;&#x6253;&#x6807;&#x7B7E;&#x7684;&#x4F5C;&#x7528;&#x4E5F;&#x662F;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x955C;&#x50CF;&#x3002;</p>
+<h2 id="run--&#x6267;&#x884C;&#x547D;&#x4EE4;">RUN  &#x6267;&#x884C;&#x547D;&#x4EE4;</h2>
+<pre><code class="lang-yaml">RUN buildDeps=<span class="hljs-string">&apos;gcc libc6-dev make wget&apos;</span> \ 
+    apt-get update &amp;&amp; apt-get install -y \
+    $buildDeps \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1<span class="hljs-number">.9</span><span class="hljs-number">.1</span> \
+    ruby1<span class="hljs-number">.9</span><span class="hljs-number">.1</span>-dev \
+    s3cmd=<span class="hljs-number">1.1</span>.* \
+ &amp;&amp; rm -rf /var/lib/apt/lists/* \
+ &amp;&amp; apt-get purge -y --auto-remove $buildDeps
+</code></pre>
+<p>&#x53CD;&#x659C;&#x6760;&#x5206;&#x9694;&#x62C6;&#x5206;&#x957F;&#x6216;&#x590D;&#x6742;&#x8BED;&#x53E5;&#xFF0C;&#x4EE5;&#x4F7F;Dockerfile&#x66F4;&#x5177;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x53EF;&#x7406;&#x89E3;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#xFF1B;&#x6BCF;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#x5C31;&#x4F1A;&#x589E;&#x52A0;&#x955C;&#x50CF;&#x5C42;&#x6570;&#xFF0C;<code>Union FS</code> &#x662F;&#x6709;&#x6700;&#x5927;&#x5C42;&#x6570;&#x9650;&#x5236;&#x7684;&#xFF0C;&#x6BD4;&#x5982; AUFS&#xFF0C;&#x66FE;&#x7ECF;&#x662F;&#x6700;&#x5927;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 42 &#x5C42;&#xFF0C;&#x73B0;&#x5728;&#x662F;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 127 &#x5C42;&#x3002;</p>
+<p><code>buildDeps</code> &#x53D8;&#x91CF;&#x6307;&#x5B9A;&#x4E86;&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x4F7F;&#x7528; <code>apt-get purge</code> &#x547D;&#x4EE4;&#x79FB;&#x9664;&#x4F9D;&#x8D56;&#x548C;&#x4EA7;&#x751F;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;<code>apt-get remove</code> &#x53EA;&#x4F1A;&#x79FB;&#x9664;&#x5B89;&#x88C5;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5E76;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#xFF0C;&#x4F7F;&#x7528;<code>purge</code> &#x53EF;&#x4EE5;&#x4F7F;&#x955C;&#x50CF;&#x66F4;&#x52A0;&#x7CBE;&#x7B80;&#x3002;</p>
+<h2 id="copy-&#x590D;&#x5236;&#x6587;&#x4EF6;">COPY &#x590D;&#x5236;&#x6587;&#x4EF6;</h2>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;&#x6E90;&#x8DEF;&#x5F84;&gt;... &lt;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&gt;
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&quot;&lt;&#x6E90;&#x8DEF;&#x5F84;1&gt;&quot;,... &quot;&lt;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&gt;&quot;]
+</code></pre><p>&#x548C; RUN &#x6307;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;&#x4E5F;&#x6709;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x4E8E;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x4E8E;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;</p>
+<p>&lt;&#x6E90;&#x8DEF;&#x5F84;&gt; &#x53EF;&#x4EE5;&#x662F;&#x591A;&#x4E2A;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x662F;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x5176;&#x901A;&#x914D;&#x7B26;&#x89C4;&#x5219;&#x8981;&#x6EE1;&#x8DB3; Go &#x7684; <a href="https://golang.org/pkg/path/filepath/#Match" target="_blank">filepath.Match</a> &#x89C4;&#x5219;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-yaml">COPY hom* /mydir/
+COPY hom?.txt /mydir/
+</code></pre>
+<p>&lt;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&gt; &#x53EF;&#x4EE5;&#x662F;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF08;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x53EF;&#x4EE5;&#x7528; <code>WORKDIR</code> &#x6307;&#x4EE4;&#x6765;&#x6307;&#x5B9A;&#xFF09;&#x3002;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x4E0D;&#x9700;&#x8981;&#x4E8B;&#x5148;&#x521B;&#x5EFA;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#x4F1A;&#x5728;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x524D;&#x5148;&#x884C;&#x521B;&#x5EFA;&#x7F3A;&#x5931;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#xFF0C;&#x4F7F;&#x7528; COPY &#x6307;&#x4EE4;&#xFF0C;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5404;&#x79CD;&#x5143;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x4FDD;&#x7559;&#x3002;&#x6BD4;&#x5982;&#x8BFB;&#x3001;&#x5199;&#x3001;&#x6267;&#x884C;&#x6743;&#x9650;&#x3001;&#x6587;&#x4EF6;&#x53D8;&#x66F4;&#x65F6;&#x95F4;&#x7B49;&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5BF9;&#x4E8E;&#x955C;&#x50CF;&#x5B9A;&#x5236;&#x5F88;&#x6709;&#x7528;&#x3002;&#x7279;&#x522B;&#x662F;&#x6784;&#x5EFA;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x90FD;&#x5728;&#x4F7F;&#x7528; Git &#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<p>&#x5728;&#x4F7F;&#x7528;&#x8BE5;&#x6307;&#x4EE4;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x53EF;&#x4EE5;&#x52A0;&#x4E0A; --chown=<user>:<group> &#x9009;&#x9879;&#x6765;&#x6539;&#x53D8;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x5C5E;&#x7528;&#x6237;&#x53CA;&#x6240;&#x5C5E;&#x7EC4;&#x3002;</group></user></p>
+<pre><code class="lang-yaml">COPY --chown=<span class="hljs-number">55</span>:mygroup files* /mydir/
+COPY --chown=bin files* /mydir/
+COPY --chown=<span class="hljs-number">1</span> files* /mydir/
+COPY --chown=<span class="hljs-number">10</span>:<span class="hljs-number">11</span> files* /mydir/
+</code></pre>
+<p>&#x590D;&#x5236;&#x5305;&#x542B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF08;&#x4F8B;&#x5982;[ &#x548C; ]&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6309;&#x7167;Golang&#x89C4;&#x5219;&#x8F6C;&#x4E49;&#x8FD9;&#x4E9B;&#x8DEF;&#x5F84;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x5B83;&#x4EEC;&#x88AB;&#x89C6;&#x4E3A;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x590D;&#x5236;&#x540D;&#x4E3A;&#x7684;&#x6587;&#x4EF6;arr[0].txt&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;;</p>
+<pre><code>COPY arr[[]0].txt /mydir/    # copy a file named &quot;arr[0].txt&quot; to /mydir/
+</code></pre><p>&#x8FD9;&#x91CC;&#x4E0D;&#x662F;&#x5F88;&#x660E;&#x767D;&#x662F;&#x600E;&#x4E48;&#x8F6C;&#x4E49;&#x7684;&#xFF0C;&#x6765;&#x81EA;<a href="https://docs.docker.com/engine/reference/builder/#copy" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p>&#x6CE8;&#x610F;&#xFF1A; </p>
+<p>COPY &#x548C; ADD &#x547D;&#x4EE4;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7279;&#x70B9;&#xFF1A;&#x53EA;&#x590D;&#x5236;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x800C;&#x4E0D;&#x5305;&#x542B;&#x76EE;&#x5F55;&#x81EA;&#x8EAB;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x590D;&#x5236;&#x76EE;&#x5F55;&#x5230;&#x955C;&#x50CF;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x4E2D;&#x6307;&#x5B9A;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<h2 id="add">ADD</h2>
+<p>&#x5728; Docker &#x5B98;&#x65B9;&#x7684; <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank">Dockerfile &#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x6587;&#x6863;</a> &#x4E2D;&#x8981;&#x6C42;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4F7F;&#x7528; COPY&#xFF0C;&#x56E0;&#x4E3A; COPY &#x7684;&#x8BED;&#x4E49;&#x5F88;&#x660E;&#x786E;&#xFF0C;&#x5C31;&#x662F;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x800C;&#x5DF2;&#xFF0C;&#x800C; ADD &#x5219;&#x5305;&#x542B;&#x4E86;&#x66F4;&#x590D;&#x6742;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5176;&#x884C;&#x4E3A;&#x4E5F;&#x4E0D;&#x4E00;&#x5B9A;&#x5F88;&#x6E05;&#x6670;&#x3002;&#x6700;&#x9002;&#x5408;&#x4F7F;&#x7528; ADD &#x7684;&#x573A;&#x5408;&#xFF0C;&#x5C31;&#x662F;&#x9700;&#x8981;&#x81EA;&#x52A8;&#x89E3;&#x538B;&#x7F29;&#x7684;&#x573A;&#x5408;&#x3002;</p>
+<h2 id="workdir---&#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;">WORKDIR   &#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</h2>
+<p>WORKDIR &#x547D;&#x4EE4;&#x4E3A;&#x540E;&#x7EED;&#x7684; RUN&#x3001;CMD&#x3001;COPY&#x3001;ADD &#x7B49;&#x547D;&#x4EE4;&#x914D;&#x7F6E;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x5728;&#x8BBE;&#x7F6E;&#x4E86; WORKDIR &#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684; COPY &#x548C; ADD &#x547D;&#x4EE4;&#x4E2D;&#x7684;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x5C31;&#x662F;&#x76F8;&#x5BF9;&#x4E8E; WORKDIR &#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x5373;&#x4F7F;dockerfile&#x540E;&#x9762;&#x7684;&#x6307;&#x4EE4;&#x6CA1;&#x4F7F;&#x7528; WORKDIR&#xFF0C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E5F;&#x5C06;&#x521B;&#x5EFA;&#x3002;</p>
+<pre><code class="lang-yaml"><span class="hljs-comment"># cat Dockerfile </span>
+FROM nginx:alpine
+WORKDIR /app
+COPY xxxx .
+COPY <span class="hljs-number">1</span>[[]<span class="hljs-number">0</span>].txt /etc/nginx/conf
+<span class="hljs-comment">### Dockerfile&#x6587;&#x4EF6;  &#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55; &#x5C06;xxxx&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E0B;</span>
+
+<span class="hljs-comment"># docker exec -it fe sh</span>
+/app <span class="hljs-comment"># ls</span>
+nginx.conf
+/app <span class="hljs-comment"># exit</span>
+<span class="hljs-comment">### &#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x540E;&#x76F4;&#x63A5;&#x8FDB;&#x5165;app&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span>
+</code></pre>
+<p>&#x8BE5; WORKDIR &#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x5728;a&#x4E2D;&#x591A;&#x6B21;&#x4F7F;&#x7528;Dockerfile&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x5B83;&#x5C06;&#x76F8;&#x5BF9;&#x4E8E;&#x524D;&#x4E00;&#x6761;WORKDIR&#x6307;&#x4EE4;&#x7684;&#x8DEF;&#x5F84; &#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>WORKDIR /a
+WORKDIR b
+WORKDIR c
+RUN pwd
+</code></pre><p>&#x6700;&#x7EC8;pwd&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;Dockerfile&#x5C06;&#x662F; <code>/a/b/c</code></p>
+<p>&#x8BE5; WORKDIR &#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x89E3;&#x6790;&#x5148;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF; ENV&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>ENV DIRPATH /path
+WORKDIR $DIRPATH/$DIRNAME
+RUN pwd
+</code></pre><p>&#x6700;&#x7EC8;pwd&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;Dockerfile&#x5C06;&#x662F; <code>/path/$DIRNAME</code></p>
+<h2 id="env-&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x5185;&#x73AF;&#x5883;&#x53D8;&#x91CF;">ENV &#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x5185;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p>&#x683C;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#xFF1A;</p>
+<pre><code class="lang-yaml">ENV &lt;key&gt; &lt;value<span class="hljs-string">&gt;
+ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...
+</span></code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x800C;&#x5DF2;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x540E;&#x9762;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;&#xFF0C;&#x5982; RUN&#xFF0C;&#x8FD8;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code class="lang-yaml">ENV VERSION=<span class="hljs-number">1.0</span> DEBUG=on \
+    NAME=<span class="hljs-string">&quot;Hello world&quot;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x6362;&#x884C;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x542B;&#x6709;&#x7A7A;&#x683C;&#x7684;&#x503C;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x529E;&#x6CD5;&#xFF0C;&#x8FD9;&#x548C; Shell &#x4E0B;&#x7684;&#x884C;&#x4E3A;&#x662F;&#x4E00;&#x81F4;&#x7684;.</p>
+<h2 id="arg-&#x8BBE;&#x7F6E;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x65F6;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;">ARG &#x8BBE;&#x7F6E;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x65F6;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p><strong>ARG &#x548C; ENV &#x7684;&#x5173;&#x7CFB;</strong></p>
+<p>&#x6784;&#x5EFA;&#x53C2;&#x6570;&#x548C; ENV &#x7684;&#x6548;&#x679C;&#x4E00;&#x6837;&#xFF0C;&#x90FD;&#x662F;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;ARG &#x6240;&#x8BBE;&#x7F6E;&#x7684;&#x6784;&#x5EFA;&#x73AF;&#x5883;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;.</p>
+<p>&#x8FD8;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;Dockerfile&#x4E2D;&#xFF0C;&#x60F3;&#x8981;&#x5728; FROM &#x5F15;&#x7528; ARG &#x7684;&#x503C;&#xFF0C;ARG&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x5199;&#x5728; FROM&#x4E4B;&#x524D; &#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x5199;&#x5728; FROM &#x4E4B;&#x524D;&#x7684;ARG&#x503C;&#x6B64;&#x65F6;&#x53EA;&#x80FD;&#x5728;FROM&#x4E2D;&#x5F15;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x540E;&#x9762;&#x7684;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x9700;&#x8981;&#x5F15;&#x7528;&#xFF0C;&#x5FC5;&#x987B;&#x518D;&#x91CD;&#x65B0;&#x7533;&#x660E;&#x3002;&#x5982;&#x4E0B;</p>
+<p>&#x4E0B;&#x9762;&#x793A;&#x4F8B;&#x662F;&#x5728;FROM&#x524D;&#x540E;&#x90FD;&#x4F7F;&#x7528; <code>ARG &#x6307;&#x4EE4;</code></p>
+<pre><code class="lang-yaml">ARG VERSION
+FROM nginx:${VERSION}
+ARG VERSION
+RUN echo ${VERSION}
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x6784;&#x5EFA;&#x8F93;&#x51FA;&#x5728;&#x7B2C;&#x56DB;&#x6B65;&#x663E;&#x793A; echo &#x503C;</p>
+<pre><code class="lang-shell">[root@node1 docker]# docker build --build-arg VERSION=alpine .
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : ARG VERSION
+Step 2/4 : FROM nginx:${VERSION}
+alpine: Pulling from library/nginx
+bdf0201b3a05: Already exists 
+08d74e155349: Pull complete 
+a9e2a0b35060: Pull complete 
+d9e2304ab8d0: Pull complete 
+Digest: sha256:61e3db30b1334b1fa0a2e71b86625188f76653565d515d5f74ecc55a8fb91ce9
+Status: Downloaded newer image for nginx:alpine
+ ---&gt; 0be75340bd9b
+Step 3/4 : ARG VERSION
+ ---&gt; Running in 57b9d8bccc02
+Removing intermediate container 57b9d8bccc02
+ ---&gt; d7b120dcb6cc
+Step 4/4 : RUN echo ${VERSION}
+ ---&gt; Running in db84122a22b4
+alpine              ###############    &#x6CE8;&#x610F;&#x8FD9;&#xFF01;&#xFF01;&#xFF01;&#xFF01;&#xFF01;
+Removing intermediate container db84122a22b4
+ ---&gt; eb8b05d72b74
+Successfully built eb8b05d72b74
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x793A;&#x4F8B;&#x662F;&#x53EA;&#x5728; FROM &#x524D;&#x4F7F;&#x7528; <code>ARG &#x6307;&#x4EE4;</code></p>
+<pre><code class="lang-yaml">ARG VERSION
+FROM nginx:${VERSION}
+RUN echo ${VERSION:<span class="hljs-bullet">-1.0</span>}
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x8F93;&#x51FA;&#x4E2D;&#xFF0C;FROM&#x5F15;&#x7528;&#x4E86; ARG &#x7684;&#x503C;&#xFF0C;FROM&#x4E4B;&#x540E;&#x7684;RUN&#x6307;&#x4EE4;&#x672A;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x6211;&#x4EEC;&#x89C4;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<pre><code class="lang-shell"># docker build --build-arg VERSION=latest .
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : ARG VERSION
+Step 2/3 : FROM nginx:${VERSION}
+latest: Pulling from library/nginx
+27833a3ba0a5: Pull complete 
+ea005e36e544: Pull complete 
+d172c7f0578d: Pull complete 
+Digest: sha256:e71b1bf4281f25533cf15e6e5f9be4dac74d2328152edf7ecde23abc54e16c1c
+Status: Downloaded newer image for nginx:latest
+ ---&gt; 27a188018e18
+Step 3/3 : RUN echo ${VERSION:-1.0}
+ ---&gt; Running in 856022e6f98d
+1.0           ################ &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;&#x503C;&#xFF01;&#xFF01;&#xFF01;
+Removing intermediate container 856022e6f98d
+ ---&gt; 69d12f7d9648
+Successfully built 69d12f7d9648
+</code></pre>
+<p><strong>ARG &#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x8BBE;&#x5B9A;</strong></p>
+<p>&#x5728;&#x6784;&#x5EFA;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x9012;&#x503C;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;</p>
+<pre><code class="lang-yaml">FROM busybox
+ARG user1=someuser
+ARG buildno=<span class="hljs-number">1</span>
+</code></pre>
+<h2 id="volume-&#x6302;&#x8F7D;&#x5377;">VOLUME &#x6302;&#x8F7D;&#x5377;</h2>
+<p>&#x5728; Dockerfile &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E8B;&#x5148;&#x6307;&#x5B9A;&#x67D0;&#x4E9B;&#x76EE;&#x5F55;&#x6302;&#x8F7D;&#x4E3A;&#x533F;&#x540D;&#x5377;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5982;&#x679C;&#x7528;&#x6237;&#x4E0D;&#x6307;&#x5B9A;&#x6302;&#x8F7D;&#xFF0C;&#x5176;&#x5E94;&#x7528;&#x4E5F;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5411;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x5C42;&#x5199;&#x5165;&#x5927;&#x91CF;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-yaml">VOLUME /data
+</code></pre>
+<h2 id="expose---&#x7533;&#x660E;&#x7AEF;&#x53E3;">EXPOSE   &#x7533;&#x660E;&#x7AEF;&#x53E3;</h2>
+<p><code>EXPOSE</code> &#x6307;&#x4EE4;&#x662F;&#x58F0;&#x660E;&#x8FD0;&#x884C;&#x65F6;&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7AEF;&#x53E3;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x58F0;&#x660E;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5E76;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x58F0;&#x660E;&#x5E94;&#x7528;&#x5C31;&#x4F1A;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;&#x7684;&#x670D;&#x52A1;&#x3002;&#x5728; Dockerfile &#x4E2D;&#x5199;&#x5165;&#x8FD9;&#x6837;&#x7684;&#x58F0;&#x660E;&#x6709;&#x4E24;&#x4E2A;&#x597D;&#x5904;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5E2E;&#x52A9;&#x955C;&#x50CF;&#x4F7F;&#x7528;&#x8005;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x670D;&#x52A1;&#x7684;&#x5B88;&#x62A4;&#x7AEF;&#x53E3;&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF;&#x914D;&#x7F6E;&#x6620;&#x5C04;&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x5904;&#x5219;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F7F;&#x7528;&#x968F;&#x673A;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x65F6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>docker run -P</code> &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x968F;&#x673A;&#x6620;&#x5C04; <code>EXPOSE</code> &#x7684;&#x7AEF;&#x53E3;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x662F;&#x4FA6;&#x542C;TCP&#x8FD8;&#x662F;UDP&#xFF0C;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x534F;&#x8BAE;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;TCP&#x3002;</p>
+<p>&#x65E0;&#x8BBA;EXPOSE&#x8BBE;&#x7F6E;&#x5982;&#x4F55;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>-p</code>&#x6807;&#x5FD7;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x8986;&#x76D6;&#x5B83;&#x4EEC;</p>
+<h2 id="user-&#x6307;&#x5B9A;&#x5F53;&#x524D;&#x7528;&#x6237;">USER &#x6307;&#x5B9A;&#x5F53;&#x524D;&#x7528;&#x6237;</h2>
+<p>USER &#x6307;&#x4EE4;&#x548C; WORKDIR &#x76F8;&#x4F3C;&#xFF0C;&#x90FD;&#x662F;&#x6539;&#x53D8;&#x73AF;&#x5883;&#x72B6;&#x6001;&#x5E76;&#x5F71;&#x54CD;&#x4EE5;&#x540E;&#x7684;&#x5C42;&#x3002;WORKDIR &#x662F;&#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;USER &#x5219;&#x662F;&#x6539;&#x53D8;&#x4E4B;&#x540E;&#x5C42;&#x7684;&#x6267;&#x884C; RUN, CMD &#x4EE5;&#x53CA; ENTRYPOINT &#x8FD9;&#x7C7B;&#x547D;&#x4EE4;&#x7684;&#x8EAB;&#x4EFD;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x548C; WORKDIR &#x4E00;&#x6837;&#xFF0C;USER &#x53EA;&#x662F;&#x5E2E;&#x52A9;&#x4F60;&#x5207;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x800C;&#x5DF2;&#xFF0C;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x662F;&#x4E8B;&#x5148;&#x5EFA;&#x7ACB;&#x597D;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x5207;&#x6362;&#x3002;</p>
+<pre><code class="lang-yaml">RUN groupadd -r redis &amp;&amp; useradd -r -g redis redis
+USER redis
+RUN [ <span class="hljs-string">&quot;redis-server&quot;</span> ]
+</code></pre>
+<p>&#x5982;&#x679C;&#x4EE5; root &#x6267;&#x884C;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x671F;&#x95F4;&#x5E0C;&#x671B;&#x6539;&#x53D8;&#x8EAB;&#x4EFD;&#xFF0C;&#x6BD4;&#x5982;&#x5E0C;&#x671B;&#x4EE5;&#x67D0;&#x4E2A;&#x5DF2;&#x7ECF;&#x5EFA;&#x7ACB;&#x597D;&#x7684;&#x7528;&#x6237;&#x6765;&#x8FD0;&#x884C;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528; su &#x6216;&#x8005; sudo&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x9700;&#x8981;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x800C;&#x4E14;&#x5728; TTY &#x7F3A;&#x5931;&#x7684;&#x73AF;&#x5883;&#x4E0B;&#x7ECF;&#x5E38;&#x51FA;&#x9519;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <a href="https://github.com/tianon/gosu" target="_blank">gosu</a>&#x3002;</p>
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x5EFA;&#x7ACB; redis &#x7528;&#x6237;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; gosu &#x6362;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x6267;&#x884C;&#x547D;&#x4EE4;</span>
+RUN groupadd -r redis &amp;&amp; useradd -r -g redis redis
+<span class="hljs-comment"># &#x4E0B;&#x8F7D; gosu</span>
+RUN wget -O /usr/local/bin/gosu <span class="hljs-string">&quot;https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64&quot;</span> \
+    &amp;&amp; chmod +x /usr/local/bin/gosu \
+    &amp;&amp; gosu nobody <span class="hljs-literal">true</span>
+<span class="hljs-comment"># &#x8BBE;&#x7F6E; CMD&#xFF0C;&#x5E76;&#x4EE5;&#x53E6;&#x5916;&#x7684;&#x7528;&#x6237;&#x6267;&#x884C;</span>
+CMD [ <span class="hljs-string">&quot;exec&quot;</span>, <span class="hljs-string">&quot;gosu&quot;</span>, <span class="hljs-string">&quot;redis&quot;</span>, <span class="hljs-string">&quot;redis-server&quot;</span> ]
+</code></pre>
+<h2 id="healthcheck---&#x5065;&#x5EB7;&#x68C0;&#x67E5;">HEALTHCHECK   &#x5065;&#x5EB7;&#x68C0;&#x67E5;</h2>
+<p><code>HEALTHCHECK</code> &#x6307;&#x4EE4;&#x662F;&#x544A;&#x8BC9; Docker &#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x5BB9;&#x5668;&#x7684;&#x72B6;&#x6001;&#x662F;&#x5426;&#x6B63;&#x5E38;&#xFF0C;&#x8FD9;&#x662F; Docker 1.12 &#x5F15;&#x5165;&#x7684;&#x65B0;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code>HEALTHCHECK [&#x9009;&#x9879;] CMD &lt;&#x547D;&#x4EE4;&gt;&#xFF1A;&#x8BBE;&#x7F6E;&#x68C0;&#x67E5;&#x5BB9;&#x5668;&#x5065;&#x5EB7;&#x72B6;&#x51B5;&#x7684;&#x547D;&#x4EE4;
+HEALTHCHECK NONE&#xFF1A;&#x5982;&#x679C;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x6709;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x6307;&#x4EE4;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x884C;&#x53EF;&#x4EE5;&#x5C4F;&#x853D;&#x6389;&#x5176;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x6307;&#x4EE4;
+</code></pre><p>&#x5728;&#x4E00;&#x4E2A;&#x955C;&#x50CF;&#x6307;&#x5B9A;&#x4E86; HEALTHCHECK &#x6307;&#x4EE4;&#x540E;&#xFF0C;&#x7528;&#x5176;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#xFF0C;&#x521D;&#x59CB;&#x72B6;&#x6001;&#x4F1A;&#x4E3A; starting&#xFF0C;&#x5728; HEALTHCHECK &#x6307;&#x4EE4;&#x68C0;&#x67E5;&#x6210;&#x529F;&#x540E;&#x53D8;&#x4E3A; healthy&#xFF0C;&#x5982;&#x679C;&#x8FDE;&#x7EED;&#x4E00;&#x5B9A;&#x6B21;&#x6570;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x4F1A;&#x53D8;&#x4E3A; unhealthy&#x3002;</p>
+<p>HEALTHCHECK &#x652F;&#x6301;&#x4E0B;&#x5217;&#x9009;&#x9879;&#xFF1A;</p>
+<p>--interval=&lt;&#x95F4;&#x9694;&gt;&#xFF1A;&#x4E24;&#x6B21;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x7684;&#x95F4;&#x9694;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 30 &#x79D2;&#xFF1B;
+--timeout=&lt;&#x65F6;&#x957F;&gt;&#xFF1A;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#xFF0C;&#x672C;&#x6B21;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5C31;&#x88AB;&#x89C6;&#x4E3A;&#x5931;&#x8D25;&#xFF0C;&#x9ED8;&#x8BA4; 30 &#x79D2;&#xFF1B;
+--retries=&lt;&#x6B21;&#x6570;&gt;&#xFF1A;&#x5F53;&#x8FDE;&#x7EED;&#x5931;&#x8D25;&#x6307;&#x5B9A;&#x6B21;&#x6570;&#x540E;&#xFF0C;&#x5219;&#x5C06;&#x5BB9;&#x5668;&#x72B6;&#x6001;&#x89C6;&#x4E3A; unhealthy&#xFF0C;&#x9ED8;&#x8BA4; 3 &#x6B21;&#x3002;
+&#x548C; CMD, ENTRYPOINT &#x4E00;&#x6837;&#xFF0C;HEALTHCHECK &#x53EA;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x5199;&#x4E86;&#x591A;&#x4E2A;&#xFF0C;&#x53EA;&#x6709;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x5728; HEALTHCHECK [&#x9009;&#x9879;] CMD &#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x683C;&#x5F0F;&#x548C; ENTRYPOINT &#x4E00;&#x6837;&#xFF0C;&#x5206;&#x4E3A; shell &#x683C;&#x5F0F;&#xFF0C;&#x548C; exec &#x683C;&#x5F0F;&#x3002;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x51B3;&#x5B9A;&#x4E86;&#x8BE5;&#x6B21;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x7684;&#x6210;&#x529F;&#x4E0E;&#x5426;&#xFF1A;0&#xFF1A;&#x6210;&#x529F;&#xFF1B;1&#xFF1A;&#x5931;&#x8D25;&#xFF1B;2&#xFF1A;&#x4FDD;&#x7559;</p>
+<h2 id="onbuild">ONBUILD</h2>
+<p>&#x683C;&#x5F0F;&#xFF1A;ONBUILD &lt;&#x5176;&#x5B83;&#x6307;&#x4EE4;&gt;&#x3002;</p>
+<p>ONBUILD &#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5B83;&#x540E;&#x9762;&#x8DDF;&#x7684;&#x662F;&#x5176;&#x5B83;&#x6307;&#x4EE4;&#xFF0C;&#x6BD4;&#x5982; RUN, COPY &#x7B49;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x6307;&#x4EE4;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x65F6;&#x5E76;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;&#x53EA;&#x6709;&#x5F53;&#x4EE5;&#x5F53;&#x524D;&#x955C;&#x50CF;&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x53BB;&#x6784;&#x5EFA;&#x4E0B;&#x4E00;&#x7EA7;&#x955C;&#x50CF;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
+<p>Dockerfile &#x4E2D;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x5B9A;&#x5236;&#x5F53;&#x524D;&#x955C;&#x50CF;&#x800C;&#x51C6;&#x5907;&#x7684;&#xFF0C;&#x552F;&#x6709; ONBUILD &#x662F;&#x4E3A;&#x4E86;&#x5E2E;&#x52A9;&#x522B;&#x4EBA;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x800C;&#x51C6;&#x5907;&#x7684;&#x3002;</p>
+<pre><code class="lang-YAML">FROM node:slim
+RUN mkdir /app
+WORKDIR /app
+ONBUILD COPY ./package.json /app
+ONBUILD RUN [ <span class="hljs-string">&quot;npm&quot;</span>, <span class="hljs-string">&quot;install&quot;</span> ]
+ONBUILD COPY . /app/
+CMD [ <span class="hljs-string">&quot;npm&quot;</span>, <span class="hljs-string">&quot;start&quot;</span> ]
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<h2 id="cmd-&#x548C;-entrypoint">CMD &#x548C; ENTRYPOINT</h2>
+<p><code>CMD</code>&#x548C;<code>ENTRYPOINT</code> &#x6307;&#x4EE4;&#x90FD;&#x662F;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x547D;&#x4EE4;</p>
+<p>&#x5355;&#x4ECE;&#x529F;&#x80FD;&#x4E0A;&#x770B;&#xFF0C;&#x5728;dockerfile&#x4E2D;&#x4F7F;&#x7528;&#x4E24;&#x8005;&#x4E4B;&#x4E00;&#x533A;&#x522B;&#x4E0D;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x65E2;&#x7136;&#x6709;&#x4E24;&#x4E2A;&#x6307;&#x4EE4;&#x80AF;&#x5B9A;&#x5C31;&#x6709;&#x4EC0;&#x4E48;&#x732B;&#x54AA;&#x3002;</p>
+<p>&#x60F3;&#x8981;&#x5F7B;&#x5E95;&#x7406;&#x89E3;&#x8FD9;&#x4E24;&#x4E2A;&#x547D;&#x4EE4;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x540C;&#x65F6;&#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;<code>exec&#x6A21;&#x5F0F;</code>&#x548C;<code>shell&#x6A21;&#x5F0F;</code>&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x6D89;&#x53CA;&#x5230;&#x57FA;&#x7840;&#x77E5;&#x8BC6;-- <code>sh</code> <code>source</code> <code>exec</code> &#x6267;&#x884C;&#x811A;&#x672C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;</p>
+<p><strong>sh</strong></p>
+<p>&#x5F53;&#x524D;shell&#x662F;&#x7236;&#x8FDB;&#x7A0B;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B50;shell&#x8FDB;&#x7A0B;&#xFF0C;&#x5728;&#x5B50;shell&#x4E2D;&#x6267;&#x884C;&#x811A;&#x672C;&#x3002;&#x811A;&#x672C;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x9000;&#x51FA;&#x5B50;shell&#xFF0C;&#x56DE;&#x5230;&#x5F53;&#x524D;shell&#x3002;</p>
+<p><code>sh xx.sh</code> &#x7B49;&#x540C;&#x4E8E; <code>./xx.sh</code></p>
+<pre><code class="lang-shell">#!/bin/sh
+while true;do
+    echo $$
+    sleep 1
+done
+</code></pre>
+<p><code>sh process.sh</code> &#x4F7F;&#x7528; <code>htop</code> &#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x6811;</p>
+<p>![20190419115402](<a href="https://img.24linux.com/static/images/20190419115402.png" target="_blank">https://img.24linux.com/static/images/20190419115402.png</a> %}</p>
+<p>&#x7236;&#x8FDB;&#x7A0B; 16130 &#x751F;&#x6210;&#x5B50;&#x8FDB;&#x7A0B; 16528 </p>
+<p><strong>source</strong></p>
+<p>&#x5728;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x4E0D;&#x4F1A;&#x751F;&#x6210;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;&#x3002;&#x811A;&#x672C;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x56DE;&#x5230;&#x5F53;&#x524D;shell&#x3002;</p>
+<p><code>source xx.sh</code> &#x7B49;&#x540C;&#x4E8E; <code>. xx.sh</code></p>
+<pre><code class="lang-shell"># source process.sh 
+16130
+16130
+16130
+16130
+16130
+</code></pre>
+<p><strong>exec</strong></p>
+<p>&#x4F7F;&#x7528;exec command&#x65B9;&#x5F0F;&#xFF0C;&#x4F1A;&#x7528;command&#x8FDB;&#x7A0B;&#x66FF;&#x6362;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x4FDD;&#x6301;PID&#x4E0D;&#x53D8;&#x3002;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#xFF0C;&#x4E0D;&#x56DE;&#x5230;&#x4E4B;&#x524D;&#x7684;shell&#x73AF;&#x5883;&#x3002;</p>
+<pre><code class="lang-shell">[root@VM_79_16_centos ~]# echo $$
+18859
+[root@VM_79_16_centos ~]# exec echo $$
+18859
+Connection closing...Socket close.
+</code></pre>
+<p>&#x5F53;&#x524D;shell&#x7684;&#x8FDB;&#x7A0B;ID 18859 &#xFF0C;&#x4F7F;&#x7528;exec &#x6267;&#x884C;&#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x5F53;&#x524D;shell&#x9000;&#x51FA;&#xFF0C;&#x4E0D;&#x56DE;&#x5230;&#x4E4B;&#x524D;&#x7684;shell&#x73AF;&#x5883;&#x3002;</p>
+<p><strong>&#x4F7F;&#x7528; sh &#x6216;&#x8005; source &#x5BF9;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x5F71;&#x54CD;</strong></p>
+<pre><code class="lang-shell">#!/bin/sh
+cd /
+pwd
+echo hello
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>sh</code> &#x547D;&#x4EE4;&#x6267;&#x884C;</p>
+<p><img src="https://img.24linux.com/static/images/20190419134944.png" alt="20190419134944"></p>
+<p>&#x6267;&#x884C;&#x5B8C;&#x540E;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x5BB6;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x672A;&#x53D7;&#x5230; <code>cd /</code> &#x7684;&#x5F71;&#x54CD;</p>
+<p>&#x4F7F;&#x7528; <code>source</code> &#x547D;&#x4EE4;&#x6267;&#x884C;</p>
+<p><img src="https://img.24linux.com/static/images/20190419135157.png" alt="20190419135157"></p>
+<p>&#x6267;&#x884C;&#x5B8C;&#x540E;&#xFF0C;&#x53D7;&#x5230; <code>cd /</code> &#x547D;&#x4EE4;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x901A;&#x8FC7;source&#x6267;&#x884C;&#x811A;&#x672C;&#x65F6;&#xFF0C;&#x4FEE;&#x6539;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4F1A;&#x5F71;&#x54CD;&#x5F53;&#x524D;shell&#xFF1B;&#x901A;&#x8FC7;sh&#x6267;&#x884C;&#x811A;&#x672C;&#x65F6;&#xFF0C;&#x4FEE;&#x6539;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5F53;&#x524D;shell&#x3002;</p>
+<p>CMD &#x548C; ENTRYPOINT &#x6307;&#x4EE4;&#x90FD;&#x652F;&#x6301; exec &#x6A21;&#x5F0F;&#x548C; shell &#x6A21;&#x5F0F;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x7406;&#x89E3; CMD &#x548C; ENTRYPOINT &#x6307;&#x4EE4;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x5C31;&#x5F97;&#x5148;&#x533A;&#x5206; exec &#x6A21;&#x5F0F;&#x548C; shell &#x6A21;&#x5F0F;&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8FDB;&#x7A0B;&#x4E3A; 1 &#x53F7;&#x8FDB;&#x7A0B;&#x3002;</p>
+<h2 id="&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86;-exec-&#x6A21;&#x5F0F;&#x548C;-shell-&#x6A21;&#x5F0F;-&#x7684;&#x533A;&#x522B;exec-&#x4EE5;&#x4E3B;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;shell-&#x7531;&#x5F53;&#x524D;shell-fork&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;-&#x4E5F;&#x5C31;&#x662F;-exec&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;&#x662F;pid&#x4E3A;1&#x7684;&#x8FDB;&#x7A0B;-&#xFF0C;&#x800C;-shell&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;pid&#x5E76;&#x4E0D;&#x662F;1&#x7684;&#x8FDB;&#x7A0B;&#x3002;">&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86; exec &#x6A21;&#x5F0F;&#x548C; shell &#x6A21;&#x5F0F; &#x7684;&#x533A;&#x522B;(exec &#x4EE5;&#x4E3B;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;shell &#x7531;&#x5F53;&#x524D;shell fork&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;) &#x4E5F;&#x5C31;&#x662F; exec&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;&#x662F;pid&#x4E3A;<code>1&#x7684;&#x8FDB;&#x7A0B;</code> &#xFF0C;&#x800C; shell&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;pid&#x5E76;&#x4E0D;&#x662F;1&#x7684;&#x8FDB;&#x7A0B;&#x3002;</h2>
+<font color="red">&#x4E3A;&#x5565;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x7A0B;&#x5E8F;&#x6700;&#x597D;&#x8981;&#x662F;&#x4EE5;&#x8FDB;&#x7A0B; pid &#x4E3A; 1&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#xFF1F;</font>
+
+<p>Docker &#x4E0D;&#x662F;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x5BB9;&#x5668;&#x5C31;&#x662F;&#x8FDB;&#x7A0B;&#xFF0C;&#x5728;linux&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;1&#x53F7;&#x8FDB;&#x7A0B;&#x7684;&#x4F5C;&#x7528;&#x4E0D;&#x8A00;&#x800C;&#x55BB;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;</p>
+<p><img src="https://img.24linux.com/static/images/20190419141723.png" alt="20190419141723"></p>
+<p>&#x5173;&#x4E8E;systemd&#x5BF9;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;&#x4E0B;<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank">&#x962E;&#x4E00;&#x5CF0;&#x8001;&#x5E08;&#x7684;&#x6559;&#x7A0B;</a>&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x5F97;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x53E6;&#x5916;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;<a href="http://www.cnblogs.com/sparkdev/p/7598590.html" target="_blank">&#x300A;&#x5728;docker&#x4E2D;&#x6355;&#x6349;&#x4FE1;&#x53F7;&#x300B;</a> &#xFF1B;</p>
+<p>Docker &#x7684; stop &#x548C; kill &#x547D;&#x4EE4;&#x90FD;&#x662F;&#x7528;&#x6765;&#x5411;&#x5BB9;&#x5668;&#x53D1;&#x9001;&#x4FE1;&#x53F7;&#x7684;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x6709;&#x5BB9;&#x5668;&#x4E2D;&#x7684; 1 &#x53F7;&#x8FDB;&#x7A0B;&#x80FD;&#x591F;&#x6536;&#x5230;&#x4FE1;&#x53F7;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x975E;&#x5E38;&#x5173;&#x952E;&#xFF01;</p>
+<h2 id="cmd">CMD</h2>
+<p>shell &#x683C;&#x5F0F;&#xFF1A;CMD &lt;&#x547D;&#x4EE4;&gt;</p>
+<p>exec &#x683C;&#x5F0F;&#xFF1A;CMD [&quot;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&quot;, &quot;&#x53C2;&#x6570;1&quot;, &quot;&#x53C2;&#x6570;2&quot;...]</p>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x683C;&#x5F0F;&#xFF1A;CMD [&quot;&#x53C2;&#x6570;1&quot;, &quot;&#x53C2;&#x6570;2&quot;...]&#x3002;&#x5728;&#x6307;&#x5B9A;&#x4E86; ENTRYPOINT &#x6307;&#x4EE4;&#x540E;&#xFF0C;&#x7528; CMD &#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p>dockerfile&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A; CMD &#x6307;&#x4EE4;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x53EA;&#x4F1A;&#x751F;&#x6548;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x8986;&#x76D6; CMD &#x6307;&#x4EE4;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x662F;&#x91CD;&#x5199;&#xFF0C;&#x5374;&#x4E0D;&#x80FD;&#x7ED9; CMD &#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x7684;&#x955C;&#x50CF;&#x90FD;&#x4F1A;&#x63D0;&#x4F9B;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x573A;&#x666F;&#x4E2D;&#x7528;&#x6237;&#x5E76;&#x4E0D;&#x60F3;&#x6267;&#x884C;&#x9ED8;&#x8BA4;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x8986;&#x76D6; CMD &#x6307;&#x4EE4;&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><strong>&#x4F7F;&#x7528;alpine&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x4EE5;&#x955C;&#x50CF;&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF1A;</strong></p>
+<pre><code class="lang-shell"># cat Dockerfile 
+FROM alpine
+
+# docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM alpine
+latest: Pulling from library/alpine
+bdf0201b3a05: Already exists 
+Digest: sha256:28ef97b8686a0b5399129e9b763d5b7e5ff03576aa5580d6f4182a49c5fe1913
+Status: Downloaded newer image for alpine:latest
+ ---&gt; cdf98d1859c1
+Successfully built cdf98d1859c1
+
+# docker run -it cdf
+/ # ps -ef
+PID   USER     TIME  COMMAND
+    1 root      0:00 /bin/sh
+    5 root      0:00 ps -ef
+/ #
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;alpine&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x7528;CMD&#x6307;&#x4EE4;&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF1A;</strong></p>
+<pre><code class="lang-shell"># cat Dockerfile 
+FROM alpine
+CMD [&quot;top&quot;]
+
+# docker run -d cb
+500a1a8d02181d176bb8d4cab1241d6c46b0d0959ade2416f8b72c19739a73d7
+
+# docker exec -it 500 ps -ef
+PID   USER     TIME  COMMAND
+    1 root      0:00 top
+    5 root      0:00 ps -ef
+</code></pre>
+<p>&#x4F7F;&#x7528;CMD&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF0C;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x67E5;&#x770B;&#x5BB9;&#x5668;&#x5F97;&#x8FDB;&#x7A0B;id&#x5982;&#x4E0A;&#x3002;&#x4F7F;&#x7528;&#x4E86;CMD&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x7684;<code>top</code>&#x547D;&#x4EE4;&#x4F5C;&#x4E3A;1&#x53F7;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p><strong>&#x4F7F;&#x7528;apline&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x7528;CMD&#x6307;&#x4EE4;&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x65F6;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x8986;&#x76D6;dockerfile&#x4E2D;&#x6307;&#x5B9A;&#x7684;CMD&#x6307;&#x4EE4;&#xFF1A;</strong></p>
+<pre><code class="lang-shell"># cat Dockerfile 
+FROM alpine
+CMD [&quot;top&quot;]
+
+# docker run --rm cb ps -ef
+PID   USER     TIME  COMMAND
+    1 root      0:00 ps -ef
+</code></pre>
+<p>dockerfile&#x4E2D;CMD&#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x88AB;&#x8986;&#x76D6;&#x3002;</p>
+<h2 id="entrypoint">ENTRYPOINT</h2>
+<p>ENTRYPOINT &#x7684;&#x683C;&#x5F0F;&#x548C; RUN &#x6307;&#x4EE4;&#x683C;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x5206;&#x4E3A; exec &#x683C;&#x5F0F;&#x548C; shell &#x683C;&#x5F0F;&#x3002;</p>
+<p>ENTRYPOINT &#x7684;&#x76EE;&#x7684;&#x548C; CMD &#x4E00;&#x6837;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#x53CA;&#x53C2;&#x6570;&#x3002;ENTRYPOINT &#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;&#xFF0C;&#x4E0D;&#x8FC7;&#x6BD4; CMD &#x8981;&#x7565;&#x663E;&#x7E41;&#x7410;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; docker run &#x7684;&#x53C2;&#x6570; --entrypoint &#x6765;&#x6307;&#x5B9A;&#x3002;</p>
+<p>&#x5F53;&#x6307;&#x5B9A;&#x4E86; ENTRYPOINT &#x540E;&#xFF0C;CMD &#x7684;&#x542B;&#x4E49;&#x5C31;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x4E0D;&#x518D;&#x662F;&#x76F4;&#x63A5;&#x7684;&#x8FD0;&#x884C;&#x5176;&#x547D;&#x4EE4;&#xFF0C;&#x800C;&#x662F;&#x5C06; CMD &#x7684;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x7ED9; ENTRYPOINT &#x6307;&#x4EE4;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5C06;&#x53D8;&#x4E3A;&#xFF1A;</p>
+<p><entrypoint> &quot;<cmd>&quot;</cmd></entrypoint></p>
+<p><strong>&#x4EE5;alpine&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x5B89;&#x88C5; curl&#x5305;</strong></p>
+<pre><code class="lang-yaml">FROM alpine
+RUN sed -i <span class="hljs-string">&apos;s/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g&apos;</span> /etc/apk/repositories \
+    &amp;&amp; apk update \
+    &amp;&amp; apk add --<span class="hljs-literal">no</span>-cache curl \
+    &amp;&amp; rm -rf /var/cache/apk/* 
+ENTRYPOINT [<span class="hljs-string">&quot;curl&quot;</span>,<span class="hljs-string">&quot;-s&quot;</span>,<span class="hljs-string">&quot;https://ip.cn&quot;</span>]
+</code></pre>
+<pre><code class="lang-shell"># docker run --rm 524
+&#x5F53;&#x524D; IP: 193.112.95.105 &#x6765;&#x81EA;: &#x5E7F;&#x4E1C;&#x7701;&#x5E7F;&#x5DDE;&#x5E02; &#x817E;&#x8BAF;
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x67E5;&#x770B;&#x8BF7;&#x6C42;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x547D;&#x4EE4;&#x4E3A; <code>curl -s -i https://ip.cn</code> &#xFF0C;&#x90A3;&#x5982;&#x4F55;&#x5C06; <code>-i</code>&#x53C2;&#x6570;&#x4F20;&#x8FDB;&#x53BB;&#x5462;&#xFF1F;</p>
+<p>CMD &#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x6CA1;&#x9519;&#xFF0C; ENTRYPOINT&#x547D;&#x4EE4;&#x4E5F;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x4E5F;&#x6CA1;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x4E2A;&#x53C2;&#x6570;&#x8FDB;&#x53BB;&#x7684;&#x65B9;&#x6CD5;&#x5462;&#xFF1F; -&#x6709;</p>
+<pre><code class="lang-shell"># docker run --rm b2e -i
+HTTP/2 200 
+date: Fri, 19 Apr 2019 08:02:12 GMT
+content-type: text/html; charset=UTF-8
+set-cookie: __cfduid=dde6679fd0958873908cf4fc4872f9b451555660932; expires=Sat, 18-Apr-20 08:02:12 GMT; path=/; domain=.ip.cn; HttpOnly
+expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+server: cloudflare
+cf-ray: 4c9d5adc1a486d66-SJC
+
+&#x5F53;&#x524D; IP: 193.112.95.105 &#x6765;&#x81EA;: &#x5E7F;&#x4E1C;&#x7701;&#x5E7F;&#x5DDE;&#x5E02; &#x817E;&#x8BAF;
+</code></pre>
+<p>&#x5982;&#x679C;dockerfile&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F; <code>ENTRYPOINT</code> &#x800C;&#x662F; <code>CMD</code> &#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4F20;&#x9012;&#x6574;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x800C;<code>ENTRYPOINT</code> &#x53EF;&#x4EE5;&#x5C06;<code>CMD</code>&#x4F20;&#x9012;&#x7684;&#x503C;&#x5F53;&#x4F5C;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x9644;&#x4E0A;&#x5B98;&#x65B9; CMD &amp;&amp; ENTRYPOINT &#x7684;&#x534F;&#x4F5C;&#x56FE;</p>
+<p><img src="https://img.24linux.com/static/images/20190419143029.png" alt="20190419143029.png"></p>
+<hr>
+<p>&#x53C2;&#x8003;</p>
+<p><a href="https://www.cnblogs.com/sparkdev/p/8461576.html" target="_blank">https://www.cnblogs.com/sparkdev/p/8461576.html</a>
+<a href="https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/entrypoint.html" target="_blank">https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/entrypoint.html</a>
+<a href="https://docs.docker.com/engine/reference/builder/" target="_blank">https://docs.docker.com/engine/reference/builder/</a>
+<a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank">https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="container-command.html" class="navigation navigation-prev " aria-label="Previous page: 容器container常用操作命令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="registry.html" class="navigation navigation-next " aria-label="Next page: 私有仓库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"dockerfile编写","level":"3.1.5","depth":2,"next":{"title":"私有仓库","level":"3.1.6","depth":2,"path":"docker/registry.md","ref":"docker/registry.md","articles":[]},"previous":{"title":"容器container常用操作命令","level":"3.1.4","depth":2,"path":"docker/container-command.md","ref":"docker/container-command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","github","github-buttons","edit-link","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/mumengyun"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"mumengyun","repo":"linux","type":"star","size":"small"},{"user":"mumengyun","type":"follow","width":"150","count":false,"size":"small"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"label":"编辑本页","base":"https://github.com/mumengyun/linux/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"toggle-chapters":{}},"theme":"default","author":"牟梦云","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"牟梦云的Linux学习笔记","links":{"sidebar":{"Home":"https://www.24linux.com"}},"gitbook":"*"},"file":{"path":"docker/dockerfile.md","mtime":"2019-05-20T07:56:13.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-20T09:22:08.304Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
